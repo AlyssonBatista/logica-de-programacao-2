@@ -1,25 +1,29 @@
-<canvas width="600" height="400"></canvas>
+<canvas width="1400" height="720"></canvas>
 
 <script>
+function paintCube(x,y,cor){
+        var tela = document.querySelector("canvas")
+        var pincel = tela.getContext("2d")
 
-    var tela = document.querySelector("canvas")
-    var pincel = tela.getContext("2d")
+        pincel.fillStyle = cor;
+        pincel.fillRect(x,y,50,50);
+        pincel.fillStroke = "black"
+        pincel.strokeRect(x,y,50,50);
 
-    pincel.fillStyle = "green";
-    pincel.fillRect(0,0,50,50);
-    pincel.fillStroke = "black"
-    pincel.strokeREct(0,0,50,50);
+   
 
-    pincel.fillStyle = "green";
-    pincel.fillRect(50,0,50,50);
-    pincel.fillStroke ="black"
-    pincel.strokeRect(50,0,50,50)
+}
 
-    pincel.fillStyle ="red";
-    pincel.fillRect(50,50,50,50);
-
-
-
-
+var x = 18;
+while(x < 1280)
+{
+    paintCube(x,0,"green");
+    x  = x + 50;
+}
+    
+for(x=18;x<1280;x=x+50)
+{
+    paintCube(x,50,"green");
+}
 
 </script>
