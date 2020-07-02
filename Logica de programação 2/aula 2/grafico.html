@@ -2,17 +2,20 @@
 
 
 <script>
+
     function desenhaRetangulo(x,y,largura,altura,cor){
+
         var tela=document.querySelector("canvas");
         var pincel = tela.getContext("2d");
+
         pincel.fillStyle = cor;
         pincel.fillRect(x,y,largura,altura);
-
         pincel.strokeStyle ="black";
         pincel.fillRect(x,y,largura,altura)
         
 
     }
+
     function desenhaTexto(x,y,texto){
 
         var tela = document.querySelector("canvas");
@@ -24,9 +27,13 @@
 
 
     }
+
     function desenhaBarra(x,y,serie,cores, texto){
+
         desenhaTexto(x,y- 10,texto);
+
         var somaAltura = 0;
+        ""
         for(var i=0;i<serie.length;i++){
             var altura = serie[i];
             desenhaRetangulo(x,y+somaAltura,50,altura,cores[i])
