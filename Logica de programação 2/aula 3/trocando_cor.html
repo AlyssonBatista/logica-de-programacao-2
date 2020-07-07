@@ -19,6 +19,15 @@
         if (evento.shiftKey) {
 
            raio = raio + 10;
+           if(raio>40){
+            raio = raio - 10;
+           }
+        }
+        if(evento.altKey){
+            raio = raio - 5;
+            if(raio<10){
+                raio = raio + raio;
+            }
         }
 
         pincel.fillStyle = 'blue';
