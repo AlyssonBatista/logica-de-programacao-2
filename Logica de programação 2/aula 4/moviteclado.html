@@ -38,17 +38,35 @@
 
     setInterval(atualizaTela,20);
 
+     
+           
     function leDoTeclado(evento){
 
         if(evento.keyCode == cima){
             y = y - taxa;
-        }else if(evento.keyCode == baixo){
-            y = y + taxa;
-        }else if(evento.keyCode == esquerda){
-            x = x - taxa;
-        }else if(evento.keyCode == direita){
-            x = x + taxa;
+            if(y<=0){
+                y=10;
+            }
         }
+        else if(evento.keyCode == baixo){
+            y = y + taxa;
+            if(y>=400){
+                y=390;
+            }
+        }
+        else if(evento.keyCode == esquerda){
+            x = x - taxa;
+            if(x<=0){
+                x=10;
+            }
+        }
+        else if(evento.keyCode == direita){
+            x = x + taxa;
+            if(x>=600){
+                x=590;
+            }
+        }
+        
 
     }
     
